@@ -1,5 +1,6 @@
- import questions from './questions.js';
+//import questions from "./questions";
 
+ 
 // Get the start button
 var startButton = document.getElementById('start');
 
@@ -13,14 +14,32 @@ function startQuiz() {
   // Show questions
   document.getElementById('questions').classList.remove('hide');
 
-  // Start presenting questions
-  presentQuestion();
+    // Start countdown
+    timeInterval = setInterval(function() {
+        time--;
+        time.textContent = time;
+
+        if (time <= 0) {
+        // Stop countdown
+        clearInterval(timeInterval);
+        // End quiz or show result
+            endQuiz();
+
+        }
+    }, 1000);
+ 
 }
 
-//time limit for questions
-var timeLeft = 60;
-var timeInterval;
-var timerEl = document.getElementById('countdown');
+presentQuestion();
 
-
-
+function presentQuestion() {    
+    // Get current question
+    var currentQuestion = questions[currentQuestion];
+    // Display question
+    document.getElementById('question').textContent = currentQuestion.question;
+    // Display options
+    document.getElementById('option-1').textContent = currentQuestion.options[0];
+    document.getElementById('option-2').textContent = currentQuestion.options[1];
+    document.getElementById('option-3').textContent = currentQuestion.options[2];
+    document.getElementById('option-4').textContent = currentQuestion.options[3];
+  }
