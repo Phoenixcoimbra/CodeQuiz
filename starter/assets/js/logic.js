@@ -17,5 +17,10 @@ function startQuiz() {
   presentQuestion();
 }
 
+//time limit for questions
+var timeLeft = 60;
+var timeInterval;
+var timerEl = document.getElementById('countdown');
+
 
 

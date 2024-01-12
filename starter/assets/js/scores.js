@@ -7,6 +7,16 @@ function updateScore(answer) {
     }
 }
 
+//incorrect answer will penalize the score by ten seconds
+function penalizeScore() {
+   score -= 10;
+}
+
 // Example usage
 updateScore('correct');
 console.log(score); // Output: 1
+
+// update the final score
+function updateFinalScore() {
+    document.getElementById('final-score').innerHTML = score;
+}   
