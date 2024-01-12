@@ -15,6 +15,7 @@ const questions = [
         options: ["Jupiter", "Saturn", "Mars", "Earth"],
         answer: "Jupiter"
     }
+    
 ];
 
 // You can add more questions to the group here
