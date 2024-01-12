@@ -1,3 +1,4 @@
+
 let score = 0;
 
 // Update the score based on the user's answers
