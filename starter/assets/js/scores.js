@@ -21,3 +21,4 @@ console.log(score); // Output: 1
 function updateFinalScore() {
     document.getElementById('final-score').innerHTML = score;
 }   
+

@@ -1,6 +1,5 @@
-import questions from "./questions";
+ var currentQuestionIndex = 0;
 
- 
 // Get the start button
 var startButton = document.getElementById('start');
 
@@ -30,16 +29,17 @@ function startQuiz() {
  
 }
 
-presentQuestion();
-
 function presentQuestion() {    
     // Get current question
-    var currentQuestion = questions[currentQuestion];
+    var currentQuestion = questions[currentQuestionIndex];
     // Display question
-    document.getElementById('question').textContent = currentQuestion.question;
+    document.getElementById('question-title').textContent = currentQuestion.question;
     // Display options
-    document.getElementById('option-1').textContent = currentQuestion.options[0];
-    document.getElementById('option-2').textContent = currentQuestion.options[1];
-    document.getElementById('option-3').textContent = currentQuestion.options[2];
-    document.getElementById('option-4').textContent = currentQuestion.options[3];
+    document.getElementById('choices-1').textContent = currentQuestion.options[0];
+    document.getElementById('choices-2').textContent = currentQuestion.options[1];
+    document.getElementById('choices-3').textContent = currentQuestion.options[2];
+    document.getElementById('choices-4').textContent = currentQuestion.options[3];
   }
+
+  
+  presentQuestion();

@@ -21,5 +21,5 @@ const questions = [
 
 // You can add more questions to the group here
 
-// Export the questions array
-export default questions;
+
+
