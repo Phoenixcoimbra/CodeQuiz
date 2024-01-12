@@ -14,12 +14,16 @@ const questions = [
         question: "What is the largest planet in our solar system?",
         options: ["Jupiter", "Saturn", "Mars", "Earth"],
         answer: "Jupiter"
-    }
-    
+    },
+    {
+        question: "What is the capital of Japan?",
+        options: ["Tokyo", "Beijing", "Seoul", "Bangkok"],
+        answer: "Tokyo"
+    },    
+    {   
+        question: "Who painted the Mona Lisa?",
+        options: ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Michelangelo"],
+        answer: "Leonardo da Vinci"
+}
 ];
-
-
-// You can add more questions to the group here
-
-
 

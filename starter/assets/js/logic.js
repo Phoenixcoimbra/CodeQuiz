@@ -13,25 +13,38 @@ function startQuiz() {
   // Show questions
   document.getElementById('questions').classList.remove('hide');
 
-    // Start countdown
-    timeInterval = setInterval(function() {
-        time--;
-        time.textContent = time;
+    // // Start countdown
+    // timeInterval = setInterval(function() {
+    //     time--;
+    //     time.textContent = time;
 
-        if (time <= 0) {
-        // Stop countdown
-        clearInterval(timeInterval);
-        // End quiz or show result
-            endQuiz();
+    //     if (time <= 0) {
+    //     // Stop countdown
+    //     clearInterval(timeInterval);
+    //     // End quiz or show result
+    //         endQuiz();
 
-        }
-    }, 1000);
+    //     }
+    // }, 1000);
  
+}
+
+function endQuiz() {
+    // Hide questions
+    document.getElementById('questions').classList.add('hide');
+
+    // Show end screen
+    document.getElementById('end-screen').classList.remove('hide');
+
+    // Update final score
+    // updateFinalScore();
 }
 
 function presentQuestion() {    
     // Get current question
     var currentQuestion = questions[currentQuestionIndex];
+
+//    for (questions = 0; i < questions.length; i++) {
     // Display question
     document.getElementById('question-title').textContent = currentQuestion.question;
     // Display options
@@ -39,7 +52,50 @@ function presentQuestion() {
     document.getElementById('choices-2').textContent = currentQuestion.options[1];
     document.getElementById('choices-3').textContent = currentQuestion.options[2];
     document.getElementById('choices-4').textContent = currentQuestion.options[3];
+
+    // // Add event listener to check answer
+     document.getElementById('answer').addEventListener('click', checkAnswer);
+
+    // Check answer
+    function checkAnswer(answer) {
+        // Get the text of the clicked choice
+        var answer = answer.target.textContent;
+      
+        // Check if the choice is correct
+        if (answer === questions[currentQuestionIndex].answer) {
+          // The choice is correct
+          console.log("Correct!");
+        } else {
+          // The choice is incorrect
+          console.log("Incorrect!");
+        }
+      }
+      currentQuestionIndex++;
+
   }
 
-  
-  presentQuestion();
+
+
+
+    // function nextQuestion() {   
+
+    //     // Check if there are more questions
+    //     if (currentQuestionIndex < questions.length - 1) {
+    //         // There are more questions
+    //         currentQuestionIndex++;
+    //         presentQuestion();
+    //     // } else {
+    //     //     // There are no more questions
+    //     //     endQuiz();
+    //      }
+
+
+    // // Get the next button
+    // document.getElementById('next').addEventListener('click', nextQuestion);
+
+
+    
+    presentQuestion();
+    checkAnswer();
+    nextQuestion();
+    
