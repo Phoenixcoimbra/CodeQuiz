@@ -77,9 +77,12 @@ function presentQuestion() {
           // The choice is incorrect
           console.log("Incorrect!");
         }
+        // Save score to localStorage
+         localStorage.setItem('score', score);
         nextQuestion();
       }
-    
+    // Save score to localStorage
+    localStorage.setItem('score', score);
       checkAnswer();
       
  // Get the next button
