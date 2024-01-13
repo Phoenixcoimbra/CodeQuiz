@@ -100,6 +100,15 @@ function presentQuestion() {
         }
    
     
-    nextQuestion();
-    endQuiz();
+    // End quiz
+    function endQuiz() {
+        // Hide questions
+        document.getElementById('questions').classList.add('hide');
+
+        // Show end screen
+        document.getElementById('end-screen').classList.remove('hide');
+
+    
     }
+    endQuiz();
+}
