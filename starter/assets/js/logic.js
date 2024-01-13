@@ -57,6 +57,7 @@ function presentQuestion() {
     document.getElementById('choices-2').textContent = currentQuestion.options[1];
     document.getElementById('choices-3').textContent = currentQuestion.options[2];
     document.getElementById('choices-4').textContent = currentQuestion.options[3];
+    
 }
 
     presentQuestion();
@@ -76,10 +77,11 @@ function presentQuestion() {
           // The choice is incorrect
           console.log("Incorrect!");
         }
+        nextQuestion();
       }
     
       checkAnswer();
-  
+      
  // Get the next button
     document.getElementById('next').addEventListener('click', nextQuestion);
 
